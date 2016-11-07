@@ -21,8 +21,8 @@ export default class Title extends NativeBaseComponent {
       color: this.getTheme().toolbarTextColor,
       fontSize: this.getTheme().titleFontSize,
       fontFamily: this.getTheme().btnFontFamily,
-      fontWeight: (Platform.OS === 'ios') ? '500' : undefined,
-      alignSelf: (Platform.OS === 'ios' ) ? 'center' : 'flex-start'
+      fontWeight: (this.getPlatform() === 'ios') ? '500' : undefined,
+      alignSelf: (this.getPlatform() === 'ios' ) ? 'center' : 'flex-start'
     }
 
     var defaultProps = {

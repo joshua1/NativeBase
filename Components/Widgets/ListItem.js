@@ -64,7 +64,7 @@ export default class ListItemNB extends NativeBaseComponent {
             itemIcon: {
                 fontSize: this.getTheme().iconFontSize,
                 color: this.getContextForegroundColor(),
-                lineHeight: (Platform.OS === 'ios') ? 34 : undefined
+                lineHeight: (this.getPlatform() === 'ios') ? 34 : undefined
             },
             itemNote: {
                 fontSize: this.getTheme().listNoteSize,

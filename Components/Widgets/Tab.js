@@ -51,12 +51,12 @@ export default class Footer extends NativeBaseComponent {
             },
             textStyle: {
                 color: this.getTheme().topTabBarTextColor,
-                lineHeight: (Platform.OS == 'ios') ? 17 : undefined
+                lineHeight: (this.getPlatform() == 'ios') ? 17 : undefined
             },
             activeTextStyle: {
                 fontWeight: '600',
                 color: this.getTheme().topTabBarActiveTextColor,
-                lineHeight: (Platform.OS == 'ios') ? 16 : undefined
+                lineHeight: (this.getPlatform() == 'ios') ? 16 : undefined
             }
         }
     }

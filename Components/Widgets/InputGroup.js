@@ -157,7 +157,7 @@ export default class InputGroup extends NativeBaseComponent {
          {
            ...this.inputProps,
            key: 'inp',
-           toolbar: (this.props.toolbar && Platform.OS == 'ios') ? true : undefined,
+           toolbar: (this.props.toolbar && this.getPlatform() == 'ios') ? true : undefined,
            editable: this.props.disabled ? false : undefined,
          }
        )

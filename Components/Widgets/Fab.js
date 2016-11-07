@@ -69,7 +69,7 @@ export default class Fab extends NativeBaseComponent {
     fabOtherBtns(direction,i) {
         if(direction === 'up') {
           return {
-            top: (Platform.OS === 'ios') ? (i*50)+5 : ((this.props.active === false) ? (155) : (i*50)+5),
+            top: (this.getPlatform() === 'ios') ? (i*50)+5 : ((this.props.active === false) ? (155) : (i*50)+5),
             bottom: undefined,
             left: 8,
             right: 0
@@ -79,13 +79,13 @@ export default class Fab extends NativeBaseComponent {
           return {
             top: 8,
             bottom: 0,
-            left: (Platform.OS === 'ios') ? -((i*50) + 50) : ((this.props.active === false) ? 150 : -((i*50)+50)),
+            left: (this.getPlatform() === 'ios') ? -((i*50) + 50) : ((this.props.active === false) ? 150 : -((i*50)+50)),
             right: 0
           }
         }
         else if (direction === 'down') {
           return {
-            top: (Platform.OS === 'ios') ? (i*50)+65 : ((this.props.active === false) ? -((i*50)+65) : (i*50)+65),
+            top: (this.getPlatform() === 'ios') ? (i*50)+65 : ((this.props.active === false) ? -((i*50)+65) : (i*50)+65),
             bottom: 0,
             left: 8,
             right: 0
@@ -95,7 +95,7 @@ export default class Fab extends NativeBaseComponent {
           return {
             top: 10,
             bottom: 0,
-            left: (Platform.OS === 'ios') ? (i*50) + 65 : ((this.props.active === false) ? -((i*50) + 65) : (i*50) + 65),
+            left: (this.getPlatform() === 'ios') ? (i*50) + 65 : ((this.props.active === false) ? -((i*50) + 65) : (i*50) + 65),
             right: 0
           }
         }
@@ -132,7 +132,7 @@ export default class Fab extends NativeBaseComponent {
             iconStyle: {
                 color: '#fff',
                 fontSize: 24,
-                lineHeight: (Platform.OS == 'ios') ? 27 : undefined
+                lineHeight: (this.getPlatform() == 'ios') ? 27 : undefined
             },
             buttonStyle: {
                 position: 'absolute',
@@ -168,7 +168,7 @@ export default class Fab extends NativeBaseComponent {
     getOtherButtonStyle(child,i) {
 
       var type = {
-        top: (this.props.direction) ? (this.fabOtherBtns(this.props.direction,i).top) : ((Platform.OS === 'ios') ? (i*50)+5 : ((this.props.active === false) ? (155) : (i*50)+5)),
+        top: (this.props.direction) ? (this.fabOtherBtns(this.props.direction,i).top) : ((this.getPlatform() === 'ios') ? (i*50)+5 : ((this.props.active === false) ? (155) : (i*50)+5)),
         left: (this.props.direction) ? (this.fabOtherBtns(this.props.direction,i).left) : 8,
         right: (this.props.direction) ? (this.fabOtherBtns(this.props.direction,i).right) : 0,
         bottom: (this.props.direction) ? (this.fabOtherBtns(this.props.direction,i).bottom) : undefined

@@ -10,7 +10,7 @@ export default class Subtitle extends NativeBaseComponent {
 
   render() {
     return(
-      <View><Text ref={c => this._root = c} style={{color: this.getTheme().subtitleColor , fontSize: this.getTheme().subTitleFontSize, alignSelf: (Platform.OS === 'ios' ) ? 'center' : 'flex-start'}}>{this.props.children}</Text></View>
+      <View><Text ref={c => this._root = c} style={{color: this.getTheme().subtitleColor , fontSize: this.getTheme().subTitleFontSize, alignSelf: (this.getPlatform() === 'ios' ) ? 'center' : 'flex-start'}}>{this.props.children}</Text></View>
     );
   }
 }
